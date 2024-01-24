@@ -32,3 +32,9 @@
 - It is a convention (not necessarily) to write a component name starting with a capital letter
 - We can write any piece of JS code inside {} braces
 - Component Composition : Using component inside a component
+
+React Fragment: A jsx in react can have only one parent element. To overcome this issue, <React.Fragment></React.Fragment> or <></> is used to contain multiple parent element inside a jsx.
+
+Config Driven UI: Controlling our frontend driven by a config given from backend.
+
+Optional Chaining
