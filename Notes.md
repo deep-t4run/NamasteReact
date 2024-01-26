@@ -64,6 +64,6 @@
 - useState(): It is used to create a state variable.
 - State Variable:
 
--Comparison between local variable creation in JS and local state variable in ReactJS using useState Hook:
-const searchText = "abc"; ---> JS
-const [searchText] = useState("abc"); ---> ReactJS
+- Comparison between local variable creation in JS and local state variable in ReactJS using useState Hook:
+  const searchText = "abc"; ---> JS
+  const [searchText] = useState("abc"); ---> ReactJS
