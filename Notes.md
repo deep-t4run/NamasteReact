@@ -33,8 +33,37 @@
 - We can write any piece of JS code inside {} braces
 - Component Composition : Using component inside a component
 
-React Fragment: A jsx in react can have only one parent element. To overcome this issue, <React.Fragment></React.Fragment> or <></> is used to contain multiple parent element inside a jsx.
+- React Fragment: A jsx in react can have only one parent element. To overcome this issue, <React.Fragment></React.Fragment> or <></> is used to contain multiple parent element inside a jsx.
 
-Config Driven UI: Controlling our frontend driven by a config given from backend.
+- Config Driven UI: Controlling our frontend driven by a config given from backend.
 
-Optional Chaining
+- Optional Chaining
+
+- Two types of import:
+
+1. Named Import: It is done when a component is exported in the manner:
+   export const Title = () => {
+   return(
+   <div></div>
+   );
+   };
+   import {Title} from './components/Title'; // This way we are importing only one component,
+
+2. Default Import: It is done when a component is exported as default.
+   const Title = () => {
+   return(
+   <div></div>
+   );
+   };
+   export default Title;
+   import Title from './components/Title'; // Here we are importing everything that is exported as default.
+
+- One-way Data Binding:
+
+- Hooks: It is just a normal function which returns an array. The first value of this array is the variable name. The second value is a function to update the variable.
+- useState(): It is used to create a state variable.
+- State Variable:
+
+-Comparison between local variable creation in JS and local state variable in ReactJS using useState Hook:
+const searchText = "abc"; ---> JS
+const [searchText] = useState("abc"); ---> ReactJS
