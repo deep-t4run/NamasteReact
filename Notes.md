@@ -38,6 +38,8 @@
 - Config Driven UI: Controlling our frontend driven by a config given from backend.
 
 - Optional Chaining
+- React Fibre
+- Reconciliation
 
 - Two types of import:
 
@@ -62,8 +64,13 @@
 
 - Hooks: It is just a normal function which returns an array. The first value of this array is the variable name. The second value is a function to update the variable.
 - useState(): It is used to create a state variable.
+- useEffect(): It takes two arguments:
+  1.  Firstly, it takes a callback function
+  2.  Secondly, it takes a dependancy array.
 - State Variable:
 
 - Comparison between local variable creation in JS and local state variable in ReactJS using useState Hook:
   const searchText = "abc"; ---> JS
   const [searchText] = useState("abc"); ---> ReactJS
+
+- Best practice to add API call is inside useEffect() hook with empty dependency array [], so that every time the component mounts or renders it will make an API call.
