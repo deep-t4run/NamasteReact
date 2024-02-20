@@ -16,29 +16,21 @@ const Body = () => {
     fetchData();
   }, []);
 
-  // const fetchData = async () => {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-  //   );
-
-  //   console.log(data);
-  //   const json = await data.json();
-
-  //   // Optional Chaining
-  //   setListOfRestraunt(json?.data?.cards[2]?.data?.data?.cards);
-  //   setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
-  // };
-
   const fetchData = async () => {
     try {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-        // "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
+        "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
-      console.log(json); // Log the fetched data
-      setListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-      setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+      setListOfRestaurants(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+      // setListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+      setFilteredRestaurant(
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -91,7 +83,7 @@ const Body = () => {
       <div className="res-container">
         {filteredRestaurant &&
           filteredRestaurant.map((restaurant) => (
-            <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
           ))}
       </div>
     </div>

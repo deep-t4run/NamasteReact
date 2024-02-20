@@ -1,5 +1,6 @@
-import { LOGO_URL } from "../config.js";
+// import { LOGO_URL } from "../config.js";
 import { useState } from "react";
+import Title from "./Title.js";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
@@ -8,7 +9,8 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        {/* <img className="logo" src={LOGO_URL} /> */}
+        <Title />
       </div>
       <div className="nav-items">
         <ul>

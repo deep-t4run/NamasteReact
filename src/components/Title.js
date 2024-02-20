@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Images/Food Villa Logo.jpeg";
+import logo from "../../Images/Food Villa Logo.png";
 const Title = () => {
   return (
     <a href="/">
