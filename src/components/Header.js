@@ -1,35 +1,54 @@
 // import { LOGO_URL } from "../config.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Title from "./Title.js";
 
 const Header = () => {
-  const [btnNameReact, setBtnNameReact] = useState("Login");
-  console.log("Header render");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    console.log("Header Rendered");
+  }, []);
 
   return (
     <div className="header">
       <div className="logo-container">
-        {/* <img className="logo" src={LOGO_URL} /> */}
+        {/* <img cla=ssName="logo" src={LOGO_URL} /> */}
         <Title />
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/about">
+            <li>About Us</li>
+          </Link>
+          <Link to="/contact">
+            <li>Contact Us</li>
+          </Link>
           <li>Cart</li>
-          <button
-            className="login"
-            onClick={() => {
-              btnNameReact === "Login"
-                ? setBtnNameReact("Logout")
-                : setBtnNameReact("Login");
-            }}
-          >
-            {btnNameReact}
-          </button>
         </ul>
       </div>
+      {isLoggedIn ? (
+        <button
+          className="login"
+          onClick={() => {
+            setIsLoggedIn(false);
+          }}
+        >
+          Logout
+        </button>
+      ) : (
+        <button
+          className="login"
+          onClick={() => {
+            setIsLoggedIn(true);
+          }}
+        >
+          Login
+        </button>
+      )}
     </div>
   );
 };

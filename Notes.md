@@ -74,3 +74,31 @@
   const [searchText] = useState("abc"); ---> ReactJS
 
 - Best practice to add API call is inside useEffect() hook with empty dependency array [], so that every time the component mounts or renders it will make an API call.
+
+- useEffect() hook takes two things passed inside it:
+
+  1. A callback function: It gets called after every render.
+  2. A dependancy array: If it is empty, the callback function is called only once after initial render. If there's something present in the dependancy array then the callback will be executed whenever any value changes. If the dependancy array is not passed, useEffect will be called at every single render.
+
+- react-router-dom: npm i react-router-dom
+- BrowserRouter: Wraps all the routes with this tag.
+- createBrowserRouter: used to create a router. It takes some configuration. This configuration is an array, i.e., it is a list of paths.
+- RouterProvider: It is a component used to render according to the router, we need to provide this router to my root.render(). This RouterProvider is passed in root.render(<RouterProvider router={appRouter}/>)
+
+#Types of routing
+
+- Client Side Routing: The URL changes but no server request is made.
+- Server Side Routing: The URL also changes but a server request is made.
+
+- Link tag: It is just anchor tag behind the scenes.
+
+- Outlet: It is a component which will be replaced by another component based on the route. All the children will go in the Outlet based on the route.
+
+- useParams(): It is a hook which is used to read a dynamic URL.
+
+# Things to remember:
+
+- Nested routes
+- Dynamic routes
+- How to handle error in routes and create an error page for the same
+- Create forms using Formik

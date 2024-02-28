@@ -26,12 +26,14 @@
 .res-container {
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: space-evenly; */
 }
 
 .res-card {
-  margin: 5px;
+  margin: 20px;
   padding: 5px;
   width: 200px;
+  height: 400px;
 }
 
 .res-card:hover {
@@ -55,10 +57,12 @@
 .shimmer-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .shimmer-card {
   margin: 20px;
+  padding: 5px;
   width: 200px;
   height: 400px;
   background-color: #f0f0f0;
@@ -70,5 +74,9 @@
 }
 
 .filter {
+  display: flex;
+}
+
+.menu {
   display: flex;
 }
