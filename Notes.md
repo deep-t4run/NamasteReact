@@ -85,7 +85,7 @@
 - createBrowserRouter: used to create a router. It takes some configuration. This configuration is an array, i.e., it is a list of paths.
 - RouterProvider: It is a component used to render according to the router, we need to provide this router to my root.render(). This RouterProvider is passed in root.render(<RouterProvider router={appRouter}/>)
 
-#Types of routing
+# Types of routing
 
 - Client Side Routing: The URL changes but no server request is made.
 - Server Side Routing: The URL also changes but a server request is made.

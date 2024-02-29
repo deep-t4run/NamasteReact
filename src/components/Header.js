@@ -1,4 +1,3 @@
-// import { LOGO_URL } from "../config.js";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "./Title.js";
@@ -10,10 +9,17 @@ const Header = () => {
     console.log("Header Rendered");
   }, []);
 
+  const handleLogoutClick = () => {
+    setIsLoggedIn(false);
+  };
+
+  const handleLoginClick = () => {
+    setIsLoggedIn(true);
+  };
+
   return (
     <div className="header">
       <div className="logo-container">
-        {/* <img cla=ssName="logo" src={LOGO_URL} /> */}
         <Title />
       </div>
       <div className="nav-items">
@@ -31,21 +37,11 @@ const Header = () => {
         </ul>
       </div>
       {isLoggedIn ? (
-        <button
-          className="login"
-          onClick={() => {
-            setIsLoggedIn(false);
-          }}
-        >
+        <button className="login" onClick={handleLogoutClick}>
           Logout
         </button>
       ) : (
-        <button
-          className="login"
-          onClick={() => {
-            setIsLoggedIn(true);
-          }}
-        >
+        <button className="login" onClick={handleLoginClick}>
           Login
         </button>
       )}
