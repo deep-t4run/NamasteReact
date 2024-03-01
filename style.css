@@ -1,7 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -9,18 +21,50 @@
 }
 
 .nav-items {
-  padding: 0px 20px;
+  padding: 30px;
+  display: flex;
 }
 
-.nav-items > ul {
-  font-size: 24px;
+.nav-items ul {
   display: flex;
   list-style-type: none;
+  padding: 0;
 }
 
-.nav-items > ul > li {
+.nav-items ul li {
+  margin: 0 10px;
   padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-items ul li:hover {
+  background-color: #e9ecef;
+  border-radius: 5px;
+}
+
+.nav-items > ul > a {
+  text-decoration: none;
+}
+
+.login {
+  background-color: #94c7fd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
   margin: 10px;
+  height: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.login:hover {
+  background-color: #dde7f2;
+}
+
+.login > a {
+  text-decoration: none;
 }
 
 .res-container {
@@ -103,7 +147,7 @@
   padding: 5px;
 }
 
-.form > button {
+.loginBtn {
   margin-left: 55px;
   margin-top: 8px;
   width: 50%;

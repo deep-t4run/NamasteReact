@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Title from "./Title.js";
 
 const Header = () => {
@@ -33,10 +33,22 @@ const Header = () => {
           <Link to="/contact">
             <li>Contact Us</li>
           </Link>
-          <li>Cart</li>
+          <Link to="/">
+            <li>Cart</li>
+          </Link>
         </ul>
+        {isLoggedIn ? (
+          <button className="login" onClick={handleLogoutClick}>
+            <Link to="/">Logout</Link>
+          </button>
+        ) : (
+          <button className="login" onClick={handleLoginClick}>
+            <Link to="/login">Login</Link>
+          </button>
+        )}
       </div>
-      {isLoggedIn ? (
+
+      {/* {isLoggedIn ? (
         <button className="login" onClick={handleLogoutClick}>
           Logout
         </button>
@@ -44,7 +56,7 @@ const Header = () => {
         <button className="login" onClick={handleLoginClick}>
           Login
         </button>
-      )}
+      )} */}
     </div>
   );
 };

@@ -1,19 +1,20 @@
 import React from "react";
 import { useFormik } from "formik";
+import { Link } from "react-router-dom";
 
 const validate = (values) => {
   const errors = {};
-  if (!errors.name) {
+  if (!values.name) {
     errors.name = "Required";
   }
 
-  if (!errors.email) {
+  if (!values.email) {
     errors.email = "Required";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
     errors.email = "Invalid email address";
   }
 
-  if (!errors.password) {
+  if (!values.password) {
     errors.password = "Required";
   }
   return errors;
@@ -72,8 +73,11 @@ const Login = () => {
         {formik.errors.password && formik.touched.password ? (
           <div>{formik.errors.password}</div>
         ) : null}
-
-        <button type="submit">Login</button>
+        <Link to="/">
+          <button type="submit" className="loginBtn">
+            Login
+          </button>
+        </Link>
       </form>
     </div>
   );
