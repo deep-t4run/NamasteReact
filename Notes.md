@@ -80,6 +80,10 @@
   1. A callback function: It gets called after every render.
   2. A dependancy array: If it is empty, the callback function is called only once after initial render. If there's something present in the dependancy array then the callback will be executed whenever any value changes. If the dependancy array is not passed, useEffect will be called at every single render.
 
+  ## Note:
+
+  - If I start a timer inside the useEfeect() hook, so to stop it the useEffect() has a return() method which is used to unmount any component. So inside the return() mathod, we can do clearInterval().
+
 - react-router-dom: npm i react-router-dom
 - BrowserRouter: Wraps all the routes with this tag.
 - createBrowserRouter: used to create a router. It takes some configuration. This configuration is an array, i.e., it is a list of paths.
@@ -102,3 +106,10 @@
 - Dynamic routes
 - How to handle error in routes and create an error page for the same
 - Create forms using Formik
+
+# Class based components
+
+- Important:
+  1. render() method => we can't create class based component without this method. It returns jsx.
+  2. We create state variable inside constructor of the class.
+  3. Need to know why we do super(props) inside the constructor???
