@@ -110,6 +110,12 @@
 # Class based components
 
 - Important:
+
   1. render() method => we can't create class based component without this method. It returns jsx.
   2. We create state variable inside constructor of the class.
   3. Need to know why we do super(props) inside the constructor???
+
+- Keywords to remember for Lazy loading:
+  1. React.lazy(()=>{}) : Inside this arrow function, we write our code that needs to be loaded lazily.
+  2. Suspense : It acts as a placeholder for something that hasn’t been fetched yet. When the lazy imported module is not loaded.
+  - the Suspense component takes a prop fallback={} : This is used to show some loader while the lazy imported component is being fetch.

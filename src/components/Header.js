@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Title from "./Title.js";
+import useOnline from "../utils/useOnLine.js";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isOnline = useOnline();
 
   useEffect(() => {
     console.log("Header Rendered");
@@ -36,6 +38,10 @@ const Header = () => {
           <Link to="/">
             <li>Cart</li>
           </Link>
+          <Link to="/instamart">
+            <li>Instamart</li>
+          </Link>
+          <li>{isOnline ? "🟢" : "🔴"}</li>
         </ul>
         {isLoggedIn ? (
           <button className="login" onClick={handleLogoutClick}>

@@ -1,3 +1,5 @@
+import React from "react";
+
 const Shimmer = () => {
   return (
     // <div className="shimmer-container">
@@ -21,7 +23,7 @@ const Shimmer = () => {
     //   <div className="shimmer-card"></div>
     // </div>
     <div className="shimmer-container">
-      {Array(10)
+      {Array(9)
         .fill("")
         .map((e, index) => (
           <div key={index} className="shimmer-card"></div>
