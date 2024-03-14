@@ -20,49 +20,47 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-gray-200 shadow-md">
       <div className="logo-container">
         <Title />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="">
+        <ul className="flex py-10 ">
           <Link to="/">
-            <li>Home</li>
+            <li className="p-2 hover:bg-white hover:rounded-lg">Home</li>
           </Link>
           <Link to="/about">
-            <li>About Us</li>
+            <li className="p-2 hover:bg-white hover:rounded-lg">About Us</li>
           </Link>
           <Link to="/contact">
-            <li>Contact Us</li>
+            <li className="p-2 hover:bg-white hover:rounded-lg">Contact Us</li>
           </Link>
           <Link to="/">
-            <li>Cart</li>
+            <li className="p-2 hover:bg-white hover:rounded-lg">Cart</li>
           </Link>
           <Link to="/instamart">
-            <li>Instamart</li>
+            <li className="p-2 hover:bg-white hover:rounded-lg">Instamart</li>
           </Link>
-          <li>{isOnline ? "🟢" : "🔴"}</li>
+          <li className="p-2 hover:bg-white hover:rounded-lg">
+            {isOnline ? "🟢" : "🔴"}
+          </li>
         </ul>
-        {isLoggedIn ? (
-          <button className="login" onClick={handleLogoutClick}>
-            <Link to="/">Logout</Link>
-          </button>
-        ) : (
-          <button className="login" onClick={handleLoginClick}>
-            <Link to="/login">Login</Link>
-          </button>
-        )}
       </div>
-
-      {/* {isLoggedIn ? (
-        <button className="login" onClick={handleLogoutClick}>
-          Logout
+      {isLoggedIn ? (
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded h-10 m-10"
+          onClick={handleLogoutClick}
+        >
+          <Link to="/">Logout</Link>
         </button>
       ) : (
-        <button className="login" onClick={handleLoginClick}>
-          Login
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded h-10 m-10"
+          onClick={handleLoginClick}
+        >
+          <Link to="/login">Login</Link>
         </button>
-      )} */}
+      )}
     </div>
   );
 };

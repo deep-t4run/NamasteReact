@@ -33,9 +33,20 @@ const Login = () => {
     },
   });
   return (
-    <div className="form-container">
-      <form onSubmit={formik.handleSubmit} className="form">
-        <label htmlFor="name">Name</label>
+    <div className="flex items-center justify-center h-screen bg-slate-50">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="p-6 bg-white rounded shadow-md"
+      >
+        <h2 className="mb-4 font-bold text-3xl text-left text-blue-700">
+          Login
+        </h2>
+        <label
+          htmlFor="name"
+          className="block mb-2 text-sm font-bold text-gray-700"
+        >
+          Name
+        </label>
         <input
           id="name"
           name="name"
@@ -43,12 +54,20 @@ const Login = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.name}
+          className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rouned shadow appearance-none focus:outline-none focus:shadow-outline"
         />
         {formik.errors.name && formik.touched.name ? (
-          <div>{formik.errors.name}</div>
+          <div className="text-xs italic text-red-500">
+            {formik.errors.name}
+          </div>
         ) : null}
 
-        <label htmlFor="email">Email</label>
+        <label
+          htmlFor="email"
+          className="block mt-4 mb-2 text-sm font-bold text-gray-700"
+        >
+          Email
+        </label>
         <input
           id="email"
           name="email"
@@ -56,12 +75,20 @@ const Login = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.email}
+          className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rouned shadow appearance-none focus:outline-none focus:shadow-outline"
         />
         {formik.errors.email && formik.touched.email ? (
-          <div>{formik.errors.email}</div>
+          <div className="text-xs italic text-red-500">
+            {formik.errors.email}
+          </div>
         ) : null}
 
-        <label htmlFor="password">Password</label>
+        <label
+          htmlFor="password"
+          className="block mt-4 mb-2 text-sm font-bold text-gray-700"
+        >
+          Password
+        </label>
         <input
           id="password"
           name="password"
@@ -69,12 +96,18 @@ const Login = () => {
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
           value={formik.values.password}
+          className="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rouned shadow appearance-none focus:outline-none focus:shadow-outline"
         />
         {formik.errors.password && formik.touched.password ? (
-          <div>{formik.errors.password}</div>
+          <div className="text-xs italic text-red-500">
+            {formik.errors.password}
+          </div>
         ) : null}
         <Link to="/">
-          <button type="submit" className="loginBtn">
+          <button
+            type="submit"
+            className="w-full px-4 py-2 mt-6 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+          >
             Login
           </button>
         </Link>
